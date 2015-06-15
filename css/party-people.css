@@ -12,6 +12,9 @@ body {
   body .cancel-message {
     display: none;
     font-family: "Open Sans", sans-serif; }
+  body .submit-message {
+    display: none;
+    font-family: "Open Sans", sans-serif; }
   body .message-show {
     display: block;
     font-family: "Open Sans", sans-serif; }
@@ -50,7 +53,7 @@ body {
         body .wrapper .form-wrap form .form-group {
           margin: 0; }
     body .wrapper .buttons-footer {
-      border-top: 1px solid #9d9d9d;
+      border-top: 0px solid #9d9d9d;
       background-color: #f6f3f6;
       border-bottom-right-radius: 5px;
       border-bottom-left-radius: 5px;

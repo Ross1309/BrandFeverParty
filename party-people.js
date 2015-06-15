@@ -12,7 +12,7 @@ var simpleValidation = function(){
 
   // Gets all forms to Validate
   validateForm.each(function(){
-    // Defining basic variables, bro
+    // Defining basic variables
     var validateForm = $(this);
     var validate = {};
     var validateThis = $(this).find('.validate');
@@ -32,14 +32,33 @@ var simpleValidation = function(){
       var index =  $(this).prevAll().length+1;
       var validateThisVal = $(this).val();
       var validateThisType = $(this).attr('type');
+        
+        //Check for lowercase
         function hasUpperCase(str) {
             if(str.toLowerCase() !== str) {
                 return true;
             }
             return false;
         }
-    var userCheck = hasUpperCase(validateThisVal);    
+    var userCheck = hasUpperCase(validateThisVal);
+        
+        //Check for period
+        function hasPeriod(str) {
+         if(str.indexOf('.') !== -1) {
+             return true;
+         }
+            return false;
+        }
+    var userCheckPeriod = hasPeriod(validateThisVal);
+        
+        
+        function hasNumbers(str){
+                var regex = /\d/g;
+                return regex.test(str);
+        }
 
+    var passCheckNum = hasNumbers(validateThisVal);    
+        
       // Checks if input type is email
       if(validateThisType === "email"){
 
@@ -61,7 +80,7 @@ var simpleValidation = function(){
         }
       } else if(validateThisType === "password"){
         // Makes sure input is filled out
-        if(validateThisVal === "" || validateThisVal.length < 5){
+        if(validateThisVal === "" || validateThisVal.length < 7 || passCheckNum === false){
           $(this).addClass('not-valid');
           $(this).removeClass('valid');
           $('.pass-icon').addClass('icon-error');
@@ -76,7 +95,7 @@ var simpleValidation = function(){
         }
       }
         else{
-         if(validateThisVal === "" || userCheck === true){
+         if(validateThisVal === "" || userCheck === true  || userCheckPeriod === false){
           $(this).addClass('not-valid');
           $(this).removeClass('valid');
           $('.user-icon').addClass('icon-error');
@@ -119,3 +138,31 @@ var simpleValidation = function(){
 };
 
 simpleValidation();
+
+
+
+
+//Attempt for valid submission message but not yet working properly
+
+/*function hasClass(element, cls) {
+    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+}
+
+var eFV = document.getElementById('eMail');
+var uFV = document.getElementById('userName');
+var pFV = document.getElementById('passWord');
+
+var emailClassCheck = hasClass(eFV, 'valid');
+var userClassCheck = hasClass(uFV, 'valid');
+var passClassCheck = hasClass(pFV, 'valid');
+
+$('#submitButton').click(function(){
+    if(emailClassCheck === true && userClassCheck === true && passClassCheck === true){
+    $('.wrapper').addClass('hide-form');
+    $('.submit-message').removeClass('submit-message');
+    $('.submit-message').addClass('message-show');
+    }
+    else{
+        
+    }
+});*/
