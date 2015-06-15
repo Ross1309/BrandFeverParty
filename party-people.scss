@@ -1,0 +1,113 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+$font-main: 'Open Sans', sans-serif;
+$border-color: #9d9d9d;
+
+input:-webkit-autofill {
+    background-color: none;   
+}
+
+body {
+    margin: auto 0;
+    padding: 0;
+    article {
+        width: 275px;
+        margin: 100px auto;
+        text-align: center;
+        }
+        .cancel-message {
+            display: none;
+            font-family: $font-main;
+        }
+        .message-show {
+            display: block;
+            font-family: $font-main;
+        }
+    .wrapper {
+        width: 275px;
+        margin: 100px auto;
+        text-align: center;
+        .border-piece {
+            border-bottom-left-radius: 0px!important;
+            border-bottom-right-radius: 0px!important;
+        }
+        .form-wrap {
+            font-family: $font-main;
+            text-align: center;
+            border-radius: 5px;
+            border: 1px solid $border-color;
+            top: 50px;
+            padding: 10px;
+            h4 {
+                text-transform: uppercase;
+                color: #699fdf;
+            }
+            form {
+                .icon-error {
+                    color: #ce6c6c;
+                }
+                .icon-valid: {
+                    color: #6d6e76;
+                }
+                input {
+                    margin: 10px 0;
+                    border-radius: 5px;
+                    border: 1px solid $border-color;
+                    background-color: #f6f3f6;
+                }
+                .not-valid {
+                        background-color: #fceded;
+                        border-color: #ce6c6c;
+                    }
+                .valid {
+                        background-color: #edfcf0 !important;
+                        border-color: #aff1c6;  
+                }
+                .form-group {
+                    margin: 0;
+                }
+                
+                }
+            }
+        .buttons-footer {
+            border-top: 1px solid $border-color;
+            background-color: #f6f3f6;
+            border-bottom-right-radius: 5px;        
+            border-bottom-left-radius: 5px;
+            border-top-right-radius: 0px;
+            border-top-left-radius: 0px;
+            input {
+                border-radius: 5px;
+                    border: 1px solid $border-color;
+                    background-color: #f6f3f6;
+                width: 75px;
+            }
+        #submitButton {
+                    background: -webkit-linear-gradient(#43a7e7,#0a4691); /* For Safari 5.1 to 6.0 */
+                    background: -o-linear-gradient(#43a7e7,#0a4691); /* For Opera 11.1 to 12.0 */
+                    background: -moz-linear-gradient(#43a7e7,#0a4691); /* For Firefox 3.6 to 15 */
+                    background: linear-gradient(#43a7e7,#0a4691); /* Standard syntax */
+                    color: #fff;
+                    font-family: $font-main;
+                    margin-left: 10px;
+                    &:hover {
+                        background: -webkit-linear-gradient(#0a4691, #43a7e7); /* For Safari 5.1 to 6.0 */
+                    background: -o-linear-gradient(#0a4691, #43a7e7); /* For Opera 11.1 to 12.0 */
+                    background: -moz-linear-gradient(#0a4691, #43a7e7); /* For Firefox 3.6 to 15 */
+                    background: linear-gradient(#0a4691, #43a7e7); /* Standard syntax */
+                    }
+                }
+                #cancelButton {
+                    color: #000;
+                    font-family: $font-main;
+                    border: none !important;
+                    margin-left: 0;
+                    padding-left: 0;
+                    background-color: #f6f3f6;
+                }
+        }
+    }
+}
+.hide-form {
+ display: none;   
+}
